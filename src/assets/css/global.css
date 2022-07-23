@@ -1,0 +1,385 @@
+html,
+body,
+#app {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.el-card__body {
+  padding: 5px;
+}
+
+/* 头部开始 */
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  margin-bottom: 10px;
+  height: auto;
+}
+
+.header .logo {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 20%;
+}
+
+.header .logo .logo-box {
+  width: 40px;
+  margin: 5px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.header .logo .logo-btns {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.header .desc span {
+  font-size: 1.4em;
+  font-family: 楷体;
+  color: transparent;
+  background-image: linear-gradient(to right, yellow, skyblue, purple);
+  background-clip: text;
+  user-select: none;
+  font-weight: 1000;
+  width: 50%;
+}
+
+.header .user {
+  font-family: 楷体;
+  font-weight: 1000;
+  cursor: pointer;
+  width: 20%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* 头部结束 */
+
+
+/* 主页面开始 */
+.eat {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  height: auto;
+}
+
+.eat .carousel {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  font-size: 1.3em;
+  line-height: 1.7em;
+  font-family: 楷体;
+  font-weight: bold;
+}
+
+.eat .main-content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  padding: 5px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.eat .main-content .search {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 25px;
+  height: auto;
+  margin: 25px 10px;
+}
+
+.eat .main-content .search .category {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.eat .main-content .search .btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.eat .main-content .search .btn .choosed-category {
+  padding: 5px;
+  margin-top: 5px;
+}
+
+.eat .main-content .show {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  height: 600px;
+  direction: rtl;
+  overflow-y: auto;
+}
+
+.eat .main-content .show .menu-box {
+  border-radius: 5px;
+  overflow: hidden;
+  margin: 17px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.eat .main-content .show .menu-box .img-box {
+  width: 140px;
+  height: auto;
+}
+
+.drawer-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.drawer-content .userInfo {
+  width: 100%;
+}
+
+.drawer-content .userInfo .el-form {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 5px;
+}
+
+.drawer-content .userInfo .el-form .progress {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.menuInfo {
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 1.3em;
+  line-height: 1.7em;
+  font-family: 楷体;
+  font-weight: bold;
+}
+
+.menuInfo .menuMain {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.menuInfo .menuMain .menuImg {
+  margin: 5px 100px 20px 0px;
+  border-radius: 5px;
+  overflow: hidden;
+  width: 150px;
+}
+
+.menuInfo .menuMain .menuPrime {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.menuInfo .menuOther {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0px 10px 20px 10px;
+}
+
+.menuInfo .menuOther .menuLevel {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menuBrief {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 10px 0 20px 0;
+}
+
+.menuInfo .menuComposeTable {
+  height: 300px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 10px 0;
+}
+
+.record {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: auto;
+  width: 100%;
+}
+
+.record .recordDrawerBtn {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 15px;
+}
+
+.record .recordDrawerBtn .title {
+  font-size: 1.5em;
+  line-height: 2em;
+  font-family: 楷体;
+  font-weight: bold;
+}
+
+.userLikeMenu {
+  margin-top: 25px;
+  font-size: 1.3em;
+  line-height: 1.7em;
+  font-family: 楷体;
+  font-weight: bold;
+}
+
+/* 主页面结束 */
+
+/* 登录注册界面开始 */
+.login-container .login-box .el-tabs__nav-scroll {
+  display: flex;
+  justify-content: center;
+}
+
+.login-container .login-box .el-tabs__content {
+  padding: 10px;
+  height: 100%;
+}
+
+.login-container {
+  width: 65%;
+  height: 77%;
+  left: 50%;
+  top: 50%;
+  position: absolute;
+  background-color: #DCD9D4;
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.50) 0%, rgba(0, 0, 0, 0.50) 100%), radial-gradient(at 50% 0%, rgba(255, 255, 255, 0.10) 0%, rgba(0, 0, 0, 0.50) 50%);
+  background-blend-mode: soft-light, screen;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+}
+
+.login-container .login-img {
+  height: 100%;
+  width: 46%;
+}
+
+.login-container .login-box {
+  padding: 10px;
+  width: 64%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-container .form {
+  margin-top: 20px;
+  width: 70%;
+  height: auto;
+}
+
+.login-container .login-box .title {
+  text-align: center;
+  height: auto;
+  background-image: linear-gradient(to left, #BDBBBE 0%, #9D9EA3 100%), radial-gradient(88% 271%, rgba(255, 255, 255, 0.25) 0%, rgba(254, 254, 254, 0.25) 1%, rgba(0, 0, 0, 0.25) 100%), radial-gradient(50% 100%, rgba(255, 255, 255, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%);
+  background-blend-mode: normal, lighten, soft-light;
+  background-clip: text;
+  color: transparent;
+  width: 100%;
+  font-size: 2em;
+  line-height: 2.3em;
+  font-family: "Helvetica Neue";
+}
+
+.login-container .login-box .login-btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-container .btns {
+  width: 60%;
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+}
+
+.login-container .logo {
+  width: 70%;
+  padding: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.login-container .logo .logo-img {
+  border-radius: 10px;
+  overflow: hidden;
+  width: 110px;
+}
+
+.login-container .logo .right {
+  line-height: 2em;
+  font-size: 15px;
+  font-weight: bolder;
+  font-family: 楷体;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+  height: auto;
+}
+
+/* 登录注册界面结束 */

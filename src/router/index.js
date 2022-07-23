@@ -1,27 +1,52 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import Vue from "vue";
+import VueRouter from "vue-router";
+Vue.use(VueRouter);
 
-Vue.use(VueRouter)
+const Home = () => import("../components/Home.vue");
+const Login = () => import("../components/Login.vue");
+const Eat = () => import("../views/Eat.vue");
+const MenuRecord = () => import("../views/MenuRecord.vue");
 
-const routes = [
-  {
-    path: '/',
-    name: 'home',
-    component: HomeView
-  },
-  {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
-  }
-]
+const originalPush = VueRouter.prototype.push;
+
+VueRouter.prototype.push = function push(location) {
+  return originalPush.call(this, location).catch((err) => err);
+};
 
 const router = new VueRouter({
-  routes
-})
+  routes: [
+    { path: "/", redirect: "/home" },
+    { path: "/login", component: Login },
+    {
+      path: "/home",
+      component: Home,
+      redirect: "/eat",
+      children: [
+        { path: "/eat", component: Eat },
+        { path: "/menurecord", component: MenuRecord },
+      ],
+    },
+  ],
+});
 
-export default router
+// 挂载路由前置守卫
+router.beforeEach((to, from, next) => {
+  // to表示将要访问的路径
+  // from表示从哪个路径而来
+  // next表示是否放行next()放行 或 next('')跳转走
+
+  //首先判断用户是否已经登录
+  const user = JSON.parse(window.sessionStorage.getItem("user"));
+  if (to.path !== "/login") {
+    if (user !== null) {
+      //已经登录
+      next();
+    } else {
+      next("/login");
+    }
+  } else {
+    next();
+  }
+});
+
+export default router;

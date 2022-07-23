@@ -1,32 +1,31 @@
 <template>
   <div id="app">
-    <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </nav>
-    <router-view/>
+    <router-view></router-view>
+    <el-backtop></el-backtop>
   </div>
 </template>
 
-<style lang="less">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
+<script>
+import "./js/lineconnect";
+export default {
+  name: "app",
+  created() {
+    //notify提示信息
+    this.$notify({
+      title: "欢迎来到吃啥-智能菜谱推荐系统",
+      message: "学习交流所用,切勿作其他用途",
+      position: "top-left",
+      type: "success",
+      duration: 8000,
+    });
+  },
+  mounted() {
+    //判断cookie中是否有该用户的字段，如果有则说明有七天免登录
+    var user = this.$cookies.get("token");
+    if (user) {
+      window.sessionStorage.setItem("user", JSON.stringify(user));
+      this.$router.push("/eat");
     }
-  }
-}
-</style>
+  },
+};
+</script>
