@@ -275,6 +275,7 @@ export default {
         "record/" + userId
       );
       this.userMenuRecord = userMenuRecordRes.data;
+      console.log(this.userMenuRecord)
       this.getUserMenu();
     },
 
@@ -285,9 +286,11 @@ export default {
       userMenuRecord.forEach((item) => {
         menuIdsArr.push(`${item.menuId}`);
       });
+      console.log("菜谱id数组:" , menuIdsArr)
       const { data: userMenu } = await this.$http.post("menu/user/menuinfo", {
         menuIdsArr: menuIdsArr,
       });
+      console.log("查询出来的菜谱:" , userMenu.data)
       if (userMenu.data.length > 0) {
         userMenu.data.forEach((menu) => {
           this.menuRecordPreImgs.push(menu.menuPut);
